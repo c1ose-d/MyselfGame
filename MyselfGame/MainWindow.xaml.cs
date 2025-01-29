@@ -47,7 +47,7 @@ public partial class MainWindow : Window
 
     private void Team_Click(object sender, RoutedEventArgs e)
     {
-        StaticResources.Teams.Single(x => x.Name == ((Button)sender).Content.ToString()).Points = Convert.ToInt32(Last.Content);
+        StaticResources.Teams.Single(x => x.Name == ((Button)sender).Content.ToString()).Points += Convert.ToInt32(Last.Content);
 
         Teams.ItemsSource = StaticResources.Teams.OrderBy(x => x.Name);
 
