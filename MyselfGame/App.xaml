@@ -1,0 +1,21 @@
+﻿<Application x:Class="MyselfGame.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MyselfGame"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/Brushes.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/BasicInput.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/ListsAndCollections.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/Primitives.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/Scrolling.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/TextFields.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/TitleBar.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/TreeView.xaml" />
+                <ResourceDictionary Source="/Resources/ResourceDictionaries/UI/Window.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

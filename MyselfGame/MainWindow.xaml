@@ -1,0 +1,114 @@
+<Window x:Class="MyselfGame.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:MyselfGame" mc:Ignorable="d"  Height="900" Title="Myself Game" Width="1600" Style="{DynamicResource Window.MainWindow}" >
+    <Border Style="{DynamicResource Window.Surface}" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="5*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border x:Name="Container" BorderBrush="{DynamicResource Dark.FillColor.System.SolidNeutralBackground}" BorderThickness="1" CornerRadius="3" Grid.Column="1" Grid.Row="1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="100" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Что такое тестирование программного обеспечения?!Процесс исследования, испытания программного продукта, имеющий своей целью проверку соответствия между реальным поведением программы и ее ожидаемым поведением на конечном наборе тестов, выбранных определенным образом." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="100" Grid.Column="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Что такое контроль качества программного обеспечения?!Набор процедур обеспечения соответствия программного обеспечения требованиям заказчика." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="100" Grid.Column="2" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Что такое обеспечения качества программного обеспечения?!Набор процедур мониторинга разработки программного обеспечения и методов, используемых для обеспечения его качества." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="100" Grid.Column="3" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Что такое дефект?!Ошибка в программе или в системе, приводящая к неожиданному поведению программы.Большинство программных ошибок возникают из-за ошибок, допущенных разработчиками программы в ее исходном коде, либо в ее дизайне. Также некоторые ошибки возникают из-за некорректной работы инструментов разработчика, например из-за компилятора, вырабатывающего некорректный код." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="100" Grid.Column="4" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Что такое отчет о дефекте?!Документ, содержащий описание, путь воспроизведения и дополнительные сведения о дефекте в системе." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="200" Grid.Row="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Назовите виды тестирования по объекту тестирования (минимум три)?!Функциональное тестирование, тестирование производительности, конфигурационное тестирование, тестирование эргономичности, тестирование безопасности, тестирование локализации." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="200" Grid.Row="1" Grid.Column="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Назовите виды тестирования по знанию внутреннего строения системы?!Тестирование черного ящика, тестирование белого ящика, тестирование серого ящика." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="200" Grid.Row="1" Grid.Column="2" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Назовите виды тестирования по степени автоматизации?!Ручное тестирование, автоматическое тестирование, полуавтоматическое тестирование." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="200" Grid.Row="1" Grid.Column="3" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Назовите виды тестирования по степени изолированности?!Модульное тестирование, интеграционное тестирование, системное тестирование." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="200" Grid.Row="1" Grid.Column="4" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Назовите виды тестирования по признаку позитивности сценариев?!Позитивное тестирование, негативное тестирование." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="300" Grid.Row="2" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Этап планирования тестирования?!На этом этапе определяются цели и задачи тестирования, разрабатывается план тестирования, включающий в себя выбор методологий, инструментов и ресурсов. Планирование также включает оценку рисков и определение критериев завершения тестирования." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="300" Grid.Row="2" Grid.Column="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Этап разработки тестовых сценариев?!Разработка тестовых сценариев требует тщательного анализа требований и спецификаций продукта. Тестировщики должны учитывать все возможные варианты использования ПО, включая как стандартные, так и нестандартные сценарии. Это помогает выявить дефекты, которые могут проявиться в реальных условиях эксплуатации. Кроме того, тестовые сценарии должны быть документированы и структурированы таким образом, чтобы их можно было легко повторить и проанализировать." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="300" Grid.Row="2" Grid.Column="2" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Этап подготовки тестовой среды?!Тестовая среда должна быть настроена таким образом, чтобы максимально точно имитировать рабочие условия ПО. Это включает установку необходимого оборудования, программного обеспечения и данных." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="300" Grid.Row="2" Grid.Column="3" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Этап анализа результатов?!После выполнения тестов результаты анализируются, составляются отчеты о найденных дефектах и их критичности. Эти отчеты помогают разработчикам исправить ошибки и улучшить качество продукта." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="300" Grid.Row="2" Grid.Column="4" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="этап регрессного тестирования?!Регрессное тестирование позволяет убедиться, что исправление дефектов не привело к появлению новых ошибок. Тестировщики повторно выполняют тестовые сценарии, чтобы проверить, что все функции ПО работают корректно. Также на этом этапе могут проводиться дополнительные тесты, чтобы убедиться, что внесенные изменения не повлияли на другие части системы." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="400" Grid.Row="3" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Покрытие кода тестами?!Это метрика, измеряющая процент исходного кода, который был проверен автоматическими тестами." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="400" Grid.Row="3" Grid.Column="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Количество найденных дефектов?!Это метрика, которая измеряет число ошибок, обнаруженных в процессе тестирования, обычно на определенное количество строк кода." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="400" Grid.Row="3" Grid.Column="2" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Время на исправление дефектов?!Это метрика в тестировании программного обеспечения, которая измеряет среднее время, необходимое для устранения обнаруженных ошибок." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="400" Grid.Row="3" Grid.Column="3" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Количество повторно открытых дефектов?!Это метрика в тестировании программного обеспечения, которая измеряет количество ошибок, которые были закрыты, но позже вновь открыты из-за их неполного или неправильного исправления." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="400" Grid.Row="3" Grid.Column="4" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Покрытие требований тестами?!Это метрика в тестировании программного обеспечения, которая измеряет, насколько полно функциональные и нефункциональные требования системы были проверены с помощью тестов." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="500" Grid.Row="4" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Тестирование по методу белого ящика?!Тестирование, основывающееся на анализе внутренней структуры программы. Тестировщик знает, как работает программа и какие функции выполняет каждый ее блок. Основной фокус в этом методе — на коде. Он исследует структуру каталогов, маршрутизацию, циклы и при необходимости может самостоятельно изменить код." />
+                    <Button FontSize="32" Width="Auto" Height="Auto" MaxWidth="500" MaxHeight="500" Click="Button_Click" Content="500" Grid.Row="4" Grid.Column="1" Style="{DynamicResource Button.Accent.TextOnly}" DataContext="Тестирование по методу черного ящика?!Тестирование, при котором тестировщик не имеет доступа к коду. Он, как реальный клиент или пользователь, оценивает функции и работу программы, ориентируясь исключительно на интерфейс взаимодействия." />
+                </Grid>
+            </Border>
+            <Border x:Name="Question" BorderBrush="{DynamicResource Dark.FillColor.System.SolidNeutralBackground}" BorderThickness="1" CornerRadius="3" Grid.Column="1" Grid.Row="1" Visibility="Collapsed" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="Question_Text" Style="{DynamicResource Text.Title}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <Button x:Name="ShowAnswer" Content="Ответ" Grid.Row="1" Click="ShowAnswer_Click" Style="{DynamicResource Button.Accent.TextOnly}" />
+                </Grid>
+            </Border>
+            <Border x:Name="Answer" BorderBrush="{DynamicResource Dark.FillColor.System.SolidNeutralBackground}" BorderThickness="1" CornerRadius="3" Grid.Column="1" Grid.Row="1" Visibility="Collapsed" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="Answer_Text" Style="{DynamicResource Text.Title}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <DockPanel x:Name="SelectTeam" Grid.Row="1" HorizontalAlignment="Center" />
+                    <Button x:Name="Skip" Content="Пропустить" Grid.Row="2" Click="Skip_Click"  Style="{DynamicResource Button.Accent.TextOnly}" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid HorizontalAlignment="Center" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="TeamsList" Content="Список" Style="{DynamicResource Button.Accent.TextOnly}" Click="TeamsList_Click" />
+                        <Button x:Name="Refresh" Content="&#xE72C;" Grid.Column="1" Style="{DynamicResource Button.Standart.IconOnly}" Click="Refresh_Click" />
+                    </Grid>
+                    <Grid Grid.Row="1" >
+                        <ListView x:Name="Teams" Style="{DynamicResource ListView}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="{DynamicResource Dark.FillColor.System.SolidNeutralBackground}" BorderThickness="1" CornerRadius="3" >
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Style="{DynamicResource Text.BodyStrong}" Text="{Binding Name}" />
+                                            <TextBlock Grid.Row="1" Style="{DynamicResource Text.Body}" Text="{Binding Points}" />
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Button x:Name="Close" Content="Закрыть" Grid.Column="3" Style="{DynamicResource Button.Accent.TextOnly}" Click="Close_Click" />
+        </Grid>
+    </Border>
+</Window>
