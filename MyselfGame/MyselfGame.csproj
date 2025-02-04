@@ -26,4 +26,10 @@
     <Using Include="System.Windows.Input" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Windows\GamesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

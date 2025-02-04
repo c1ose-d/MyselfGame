@@ -1,4 +1,7 @@
-﻿namespace MyselfGame;
+﻿using MyselfGame.Windows;
+using System.Windows.Media;
+
+namespace MyselfGame;
 
 public partial class MainWindow : Window
 {
@@ -7,52 +10,55 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    private Button Last { get; set; } = null!;
-
-    private void TeamsList_Click(object sender, RoutedEventArgs e)
+    private void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        Process process = new();
-        process.StartInfo.FileName = "explorer";
-        process.StartInfo.Arguments = Directory.GetCurrentDirectory() + @"\Teams.txt";
-        _ = process.Start();
+
     }
 
-    private void Refresh_Click(object sender, RoutedEventArgs e)
+    private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
     {
-        foreach (string line in File.ReadAllLines("Teams.txt"))
+        switch (WindowState)
         {
-            if (!string.IsNullOrEmpty(line.Trim()))
-            {
-                StaticResources.Teams.Add(new()
+            case WindowState.Normal:
+                Max.Content = "";
+                break;
+            case WindowState.Maximized:
+                Max.Content = "";
+                break;
+        }
+    }
+
+    private void Surface_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        WindowState = WindowState.Normal;
+        DragMove();
+    }
+
+    private void Min_Click(object sender, RoutedEventArgs e)
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    private void Max_Click(object sender, RoutedEventArgs e)
+    {
+        switch (WindowState)
+        {
+            case WindowState.Normal:
+                try
                 {
-                    Name = line.Trim()
-                });
-            }
+                    WindowStyle = WindowStyle.SingleBorderWindow;
+                    WindowState = WindowState.Maximized;
+                    WindowStyle = WindowStyle.None;
+                }
+                catch
+                {
+                    WindowState = WindowState.Maximized;
+                }
+                break;
+            case WindowState.Maximized:
+                WindowState = WindowState.Normal;
+                break;
         }
-
-        Teams.ItemsSource = StaticResources.Teams.OrderBy(x => x.Name);
-
-        foreach (Team team in StaticResources.Teams.OrderBy(x => x.Name))
-        {
-            Button button = new()
-            {
-                Style = (Style)Application.Current.FindResource("Button.Standart.TextOnly"),
-                Content = team.Name
-            };
-            button.Click += Team_Click;
-
-            SelectTeam.Children.Add(button);
-        }
-    }
-
-    private void Team_Click(object sender, RoutedEventArgs e)
-    {
-        StaticResources.Teams.Single(x => x.Name == ((Button)sender).Content.ToString()).Points += Convert.ToInt32(Last.Content);
-
-        Teams.ItemsSource = StaticResources.Teams.OrderBy(x => x.Name);
-
-        Answer.Visibility = Visibility.Collapsed;
-        Container.Visibility = Visibility.Visible;
     }
 
     private void Close_Click(object sender, RoutedEventArgs e)
@@ -60,29 +66,61 @@ public partial class MainWindow : Window
         Close();
     }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
+    private void Start_Click(object sender, RoutedEventArgs e)
     {
-        Last = (Button)sender;
 
-        Last.IsEnabled = false;
-
-        Question_Text.Text = Last.DataContext.ToString()!.Split("!")[0];
-
-        Container.Visibility = Visibility.Collapsed;
-        Question.Visibility = Visibility.Visible;
     }
 
-    private void ShowAnswer_Click(object sender, RoutedEventArgs e)
+    private void End_Click(object sender, RoutedEventArgs e)
     {
-        Answer_Text.Text = Last.DataContext.ToString()!.Split("!")[1];
 
-        Question.Visibility = Visibility.Collapsed;
-        Answer.Visibility = Visibility.Visible;
     }
 
-    private void Skip_Click(object sender, RoutedEventArgs e)
+    private void Teams_Click(object sender, RoutedEventArgs e)
     {
-        Answer.Visibility = Visibility.Collapsed;
-        Container.Visibility = Visibility.Visible;
+        TeamsWindow teamsWindow = new();
+        if (teamsWindow.ShowDialog() == true)
+        {
+            foreach (Team team in StaticResources.Teams)
+            {
+                Border border = new()
+                {
+                    BorderBrush = (SolidColorBrush)Application.Current.FindResource("Light.StrokeColor.SurfaceStroke"),
+                    BorderThickness = new Thickness(1),
+                    CornerRadius = new CornerRadius(3),
+                    Margin = new Thickness(8)
+                };
+
+                Grid grid = new();
+                grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
+                grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) });
+                border.Child = grid;
+
+                TextBlock teamName = new()
+                {
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Style = (Style)Application.Current.FindResource("Text.Title"),
+                    Text = team.Name
+                };
+                grid.Children.Add(teamName);
+
+                TextBlock teamPoints = new()
+                {
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Style = (Style)Application.Current.FindResource("Text.Subtitle"),
+                    Text = team.Points.ToString()
+                };
+                grid.Children.Add(teamPoints);
+                Grid.SetRow(teamPoints, 1);
+
+                TeamsField.Children.Add(border);
+            }
+        }
+    }
+
+    private void Games_Click(object sender, RoutedEventArgs e)
+    {
+        GamesWindow gamesWindow = new();
+        gamesWindow.ShowDialog();
     }
 }

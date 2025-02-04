@@ -6,6 +6,9 @@ public partial class App : Application
     {
         AppContext.SetSwitch("Switch.System.Windows.Controls.Text.UseAdornerForTextboxSelectionRendering", false);
 
-        File.Create("Teams.txt").Close();
+        if (!Directory.Exists(@".\Games"))
+        {
+            Directory.CreateDirectory(@".\Games");
+        }
     }
 }
