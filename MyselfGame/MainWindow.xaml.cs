@@ -1,4 +1,5 @@
-﻿using MyselfGame.Windows;
+﻿using MyselfGame.Pages;
+using MyselfGame.Windows;
 using System.Windows.Media;
 
 namespace MyselfGame;
@@ -8,11 +9,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-    }
-
-    private void Window_Loaded(object sender, RoutedEventArgs e)
-    {
-
     }
 
     private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -66,14 +62,45 @@ public partial class MainWindow : Window
         Close();
     }
 
+    private void CurrentGame_Click(object sender, RoutedEventArgs e)
+    {
+        SelectGame selectGame = new();
+        if (selectGame.ShowDialog() == true)
+        {
+            CurrentGame.Content = StaticResources.SelectedGame.Name;
+
+            StaticResources.GameField = GameField;
+            StaticResources.GameContainer = new();
+            StaticResources.GameField.Child = StaticResources.GameContainer;
+        }
+    }
+
     private void Start_Click(object sender, RoutedEventArgs e)
     {
+        if (CurrentGame.Content.ToString() != "Не выбрано" && TeamsField.Children.Count > 0)
+        {
+            CurrentGame.IsEnabled = false;
+            Start.IsEnabled = false;
+            Games.IsEnabled = false;
+            Teams.IsEnabled = false;
 
+            End.IsEnabled = true;
+            GameField.IsEnabled = true;
+        }
     }
 
     private void End_Click(object sender, RoutedEventArgs e)
     {
+        CurrentGame.IsEnabled = true;
+        Start.IsEnabled = true;
+        Games.IsEnabled = true;
+        Teams.IsEnabled = true;
 
+        End.IsEnabled = false;
+        GameField.IsEnabled = false;
+
+        CurrentGame.Content = "Не выбрано";
+        GameField.Child = null;
     }
 
     private void Teams_Click(object sender, RoutedEventArgs e)

@@ -27,6 +27,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\AnswerContainer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\QuestionContainer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\SelectGame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\ThemeCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\GamesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

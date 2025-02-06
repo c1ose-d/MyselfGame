@@ -22,9 +22,9 @@ public partial class GamesWindow : Window
 
     private void Add_Click(object sender, RoutedEventArgs e)
     {
-        TeamCard teamCard = new(null);
+        GameCard gameCard = new();
 
-        if (teamCard.ShowDialog() == true)
+        if (gameCard.ShowDialog() == true)
         {
             ListView.Items.Clear();
             foreach (string file in Directory.EnumerateFiles(@".\Games"))
