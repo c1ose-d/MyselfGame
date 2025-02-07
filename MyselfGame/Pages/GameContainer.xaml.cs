@@ -41,25 +41,29 @@ public partial class GameContainer : UserControl
 
             for (int j = 0; j < columns; j++)
             {
-                Button button = new()
+                try
                 {
-                    Content = StaticResources.SelectedGame.Themes[i].Questions[j].Points.ToString(),
-                    DataContext = StaticResources.SelectedGame.Themes[i].Questions[j],
-                    FontSize = 64,
-                    Height = double.NaN,
-                    HorizontalAlignment = HorizontalAlignment.Stretch,
-                    Margin = new Thickness(16),
-                    MaxHeight = double.MaxValue,
-                    MaxWidth = double.MaxValue,
-                    Style = (Style)Application.Current.FindResource("Button.Accent.TextOnly"),
-                    VerticalAlignment = VerticalAlignment.Stretch,
-                    Width = double.NaN
-                };
-                button.Click += Button_Click;
-                Grid.Children.Add(button);
+                    Button button = new()
+                    {
+                        Content = StaticResources.SelectedGame.Themes[i].Questions[j].Points.ToString(),
+                        DataContext = StaticResources.SelectedGame.Themes[i].Questions[j],
+                        FontSize = 64,
+                        Height = double.NaN,
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        Margin = new Thickness(16),
+                        MaxHeight = double.MaxValue,
+                        MaxWidth = double.MaxValue,
+                        Style = (Style)Application.Current.FindResource("Button.Accent.TextOnly"),
+                        VerticalAlignment = VerticalAlignment.Stretch,
+                        Width = double.NaN
+                    };
+                    button.Click += Button_Click;
+                    Grid.Children.Add(button);
 
-                Grid.SetColumn(button, j + 1);
-                Grid.SetRow(button, i);
+                    Grid.SetColumn(button, j + 1);
+                    Grid.SetRow(button, i);
+                }
+                catch { }
             }
         }
     }
